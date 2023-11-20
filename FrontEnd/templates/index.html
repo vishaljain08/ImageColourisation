@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Home - Chromatize</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/untitled.css') }}">
+    </head>
+
+    <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+        <nav class="navbar navbar-light navbar-expand-md fixed-top bg-dark shadow-lg" id="mainNav" style="backdrop-filter: opacity(1) blur(0px);-webkit-backdrop-filter: opacity(1) blur(0px);">
+            <div class="container"><a class="navbar-brand" href="#">Chromatize</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item nav-link"><a class="nav-link active" href="#about">Home</a></li>
+                        <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead">
+            <div class="intro-body" style="background: url('{{ url_for('static', filename='assets/img/colin-carter-w1g2o4J_4Dg-unsplash.jpg') }}');background-size: cover;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h1 class="brand-heading">chromatize</h1>
+                            <p class="intro-text">Upload Your Image</p>
+                            <form action="/" method="POST" enctype="multipart/form-data">
+                                <input class="form-control-lg" type="file" id="file" name="file" accept="image/*" required style="text-align: center;">
+                                <button type="submit" class="btn btn-primary">Upload and Convert</button>
+                            </form>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="text-center content-section" id="about">
+            <div class="container">
+                <div class="row" style="margin-bottom: -85px;margin-top: -85px;">
+                    <div class="col-lg-8 mx-auto">
+                        <h2>About chromatize</h2>
+                        <p>Chromatize is a free image colorization app that uses a GAN based model with 3 Convolutional Neural Network layers to colorize the images.</p>
+                        <p>This app was built by Vishal Jain</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="text-center download-section content-section" id="download" style="background-image: url('{{ url_for('static', filename='assets/img/downloads-bg.jpg') }}');">
+            <div class="container">
+                <div class="col-lg-8 mx-auto">
+                    <h1>Download the model</h1>
+                    <p>You can download the trained model and use for your own project.</p><a href="{{ url_for('download_model') }}" class="btn btn-primary btn-lg btn-default" role="button">Download The Model</a>
+                </div>
+            </div>
+        </section>
+        <section class="text-center content-section" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2>Contact us</h2>
+                        <p>Feel free to leave a feedback on this app or check out my other projects.</p>
+                        <ul class="list-inline banner-social-buttons">
+                            <li class="list-inline-item">&nbsp;</li>
+                            <li class="list-inline-item">&nbsp;<a href="mailto:vishal2001jain@gmail.com" class="btn btn-primary btn-lg btn-default" role="button"><i class="fa fa-envelope fa-fw"></i><span class="network-name">&nbsp;email</span></a></li>
+                            <li class="list-inline-item">&nbsp;<a href="https://github.com/vishaljain08" class="btn btn-primary btn-lg btn-default" role="button" target="_blank"><i class="fa fa-github fa-fw"></i><span class="network-name">&nbsp;github</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="map-clean"></div>
+        <footer>
+            <div class="container text-center">
+                <p>Copyright ©&nbsp;Chromatize 2023</p>
+            </div>
+        </footer>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="{{ url_for('static', filename='assets/js/grayscale.js') }}"></script>
+    </body>
+
+</html>
